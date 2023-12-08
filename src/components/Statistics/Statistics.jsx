@@ -1,3 +1,4 @@
+import { ItemList } from './ItemList';
 import css from './statistics.module.css';
 
 export const Statistics = ({ title = false, stats }) => {
@@ -12,20 +13,3 @@ export const Statistics = ({ title = false, stats }) => {
     </section>
   );
 };
-
-const ItemList = ({ label, percentage }) => {
-  return (
-    <li className={css.item} style={{ backgroundColor: getRandomColor() }}>
-      <span className={css.label}>{label}</span>
-      <span className={css.percentage}>{percentage}%</span>
-    </li>
-  );
-};
-function getRandomColor() {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}
